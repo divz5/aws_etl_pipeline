@@ -1,0 +1,20 @@
+name: deploy-py-lambda
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@master
+    - name: Deploy code to Lambda
+      uses: mariamrf/py-lambda-action@v1.0.0
+      with:
+        lambda_layer_arn: 'arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python37:5'
+        lambda_function_name: 'estimate_tracker'
+      env:
+        AWS_ACCESS_KEY_ID: 'AKIAW73ACWFXNH3QRNVH'
+        AWS_SECRET_ACCESS_KEY: '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'
+        AWS_DEFAULT_REGION: 'us-east-1'
