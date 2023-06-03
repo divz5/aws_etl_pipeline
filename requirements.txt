@@ -1,7 +1,2 @@
 pandas
 psycopg2
-
-#python -m pip install -r requirements.txt
-#zip lambda.zip lambda_function.py
-
-#7z a -tzip  lambda.zip lambda_function.py
