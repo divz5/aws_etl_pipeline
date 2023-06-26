@@ -16,6 +16,6 @@ phases:
   post_build:
     commands:
       - echo "Updating lambda Function..."
-      - aws s3 cp fileb://deployment_package.zip s3://destini-estimator/codebuild_package/
+      - aws s3 cp ./deployment_package.zip s3://destini-estimator/codebuild_package/
       - aws lambda update-function-code --function-name estimate_tracker --zip-file fileb://deployment_package.zip
       - echo "DONE!!"
